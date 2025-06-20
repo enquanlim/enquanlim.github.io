@@ -1,0 +1,54 @@
+---
+---
+
+/* ───────────────────────────────────────────────────────────────────────── */
+/* Sidebar & page-wrapper styles                                          */
+/* ───────────────────────────────────────────────────────────────────────── */
+
+// Import Minima’s default styles first
+@import "minima";
+
+.page-wrapper {
+  display: flex;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  flex: 0 0 200px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-right: 1px solid #e0e0e0;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li + li {
+  margin-top: 0.5rem;
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: block;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a:focus {
+  background-color: #e0e0e0;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  box-sizing: border-box;
+}
