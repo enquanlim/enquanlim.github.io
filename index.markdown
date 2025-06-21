@@ -14,15 +14,12 @@ body {
   background-color: #f0f7f0; /* Light green background */
 }
 
-/* Hide Posts section and About link from Jekyll theme */
-/* Remove the problematic selectors and just hide common post elements */
-.post-list,
-.posts,
-#posts,
-.site-nav a[href*="about"],
-.site-header a[href*="about"],
-nav a[href*="about"],
-header a[href*="about"] {
+/* Hide Jekyll theme header elements on all screens */
+.site-header,
+.page-header,
+header.site-header,
+header[role="banner"],
+.wrapper > header:first-child {
   display: none !important;
 }
 
@@ -211,8 +208,8 @@ strong {
   display: none;
   position: fixed;
   top: 1rem;
-  left: 1rem;
-  z-index: 1001;
+  right: 1rem;  /* Changed from left to right */
+  z-index: 9999;  /* Increased z-index */
   background: #4caf50;
   border: none;
   border-radius: 4px;
@@ -258,8 +255,10 @@ strong {
     left: -250px; /* Hide sidebar off-screen */
     width: 250px;
     transition: left 0.3s ease;
-    z-index: 1000;
+    z-index: 9998;  /* Increased z-index */
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    height: 100vh;
+    top: 0;
   }
   
   .sidebar.active {
@@ -323,7 +322,7 @@ strong {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  z-index: 9997;  /* Increased z-index */
 }
 
 .sidebar-overlay.active {
@@ -360,12 +359,9 @@ strong {
 
 <div id="about" class="tab-content" markdown="1">
 ## About Me
+I'm a quantitative finance professional based in Singapore with a strong foundation in statistics and derivatives trading. I recently completed my MSc in Financial Statistics at the London School of Economics, following a First Class Honours degree in Economics from Nanyang Technological University. With hands-on experience from Societe Generale's trading floor, I've developed expertise in equity derivatives pricing, volatility modeling, and quantitative strategies. I'm passionate about leveraging statistical methods and programming skills to solve complex financial problems.
 
-I'm a quantitative finance professional based in Singapore with a strong foundation in statistics and derivatives trading. I recently completed my MSc in Financial Statistics at the London School of Economics, following a First Class Honours degree in Economics from Nanyang Technological University. 
-
-With hands-on experience in Societe Generale, I've developed expertise in equity derivatives pricing, volatility modeling, and quantitative strategies. I'm passionate about leveraging statistical methods and programming skills to solve complex financial problems.
-
-I'm currently seeking opportunities in the eFX trading space or derivatives-related role, where I can apply my technical skills and market knowledge.
+**I'm currently seeking opportunities in quantitative trading, derivatives pricing, or quantitative research roles where I can apply my technical skills and market knowledge.**
 
 ## Career Timeline
 <div class="timeline-container">
@@ -405,10 +401,10 @@ I'm currently seeking opportunities in the eFX trading space or derivatives-rela
 
 ## Skills
 
-- **Languages**: English (Native), Mandarin (Native)  
+- **Languages**: English (Native), Mandarin (Fluent)  
 - **Programming**: Python (Pandas, NumPy, SciPy, Statsmodels, CVXPY, IPyWidgets, xlwings), R  
-- **Quant & ML**: Time-series forecasting, Deep learning, PCA, CART, KNN, Econometric modelling  
-- **Financial**: Equity Derivatives (options, futures, variance swaps), Volatility Surface & Greeks   
+- **Quant & ML**: Time-series forecasting, bagging/boosting, deep learning, PCA, econometric modelling  
+- **Financial**: Equity derivatives (options, futures, variance swaps), volatility surfaces & Greeks  
 </div>
 
 <div id="contact" class="tab-content">
