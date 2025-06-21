@@ -213,10 +213,11 @@ strong {
   background: #4caf50;
   border: none;
   border-radius: 4px;
-  padding: 0.5rem;
+  padding: 0;  /* Changed padding to 0 */
   cursor: pointer;
   width: 40px;
   height: 40px;
+  flex-direction: column;  /* Added to stack spans vertically */
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -227,8 +228,9 @@ strong {
   width: 25px;
   height: 3px;
   background: white;
-  margin: 5px 0;
+  margin: 4px 0;  /* Changed from 5px to 4px */
   transition: all 0.3s ease;
+  border-radius: 2px;  /* Added for smoother look */
 }
 
 .menu-toggle.active span:nth-child(1) {
