@@ -11,6 +11,7 @@ title: ""
 body {
   margin: 0 !important;
   padding: 0 !important;
+  background-color: #f0f7f0; /* Light green background */
 }
 
 /* Hide Posts section and About link from Jekyll theme */
@@ -40,8 +41,8 @@ header a[href*="about"] {
   top: 0;
   width: 200px;
   padding: 1rem;
-  background: #f9f9f9;
-  border-right: 1px solid #e0e0e0;
+  background: #2d5a2d; /* Dark green sidebar */
+  border-right: 2px solid #4caf50;
   height: 100vh;
   box-sizing: border-box;
   margin: 0;
@@ -53,18 +54,66 @@ header a[href*="about"] {
   display: block;
   padding: 0.4rem 0.6rem;
   text-decoration: none;
-  color: #333;
+  color: #e8f5e9; /* Light green text */
   font-weight: 600;
   border-radius: 4px;
+  transition: all 0.3s ease;
 }
 .sidebar-nav a.active,
-.sidebar-nav a:hover { background: #e0e0e0; }
+.sidebar-nav a:hover { 
+  background: #4caf50; 
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
 .main-content { 
   flex: 1; 
-  padding: 1rem; 
+  padding: 2rem; 
   box-sizing: border-box;
   margin-left: 200px;  /* Account for fixed sidebar */
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+/* Typography with green theme */
+h1, h2, h3 {
+  color: #2d5a2d;
+}
+
+h2 {
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Links */
+a {
+  color: #388e3c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2e7d32;
+  text-decoration: underline;
+}
+
+/* Lists */
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Skills and education sections */
+.main-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.main-content ul li::before {
+  content: "• ";
+  color: #4caf50;
+  font-weight: bold;
+  margin-right: 0.5rem;
 }
 
 /*─────────────────────────────────────────────────────────────────────────*/
@@ -81,26 +130,226 @@ header a[href*="about"] {
 }
 .timeline-container::before {
   content: ''; position: absolute;
-  left: 1rem; top: 0; bottom: 0; width: 2px;
-  background: #4caf50;
+  left: 1rem; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(to bottom, #4caf50, #81c784);
 }
 .timeline-entry { position: relative; margin-bottom: 2rem; }
 .timeline-marker {
-  position: absolute; left: -0.35rem; top: 0.2rem;
-  width: 1rem; height: 1rem; background: #fff;
-  border: 2px solid #4caf50; border-radius: 50%;
+  position: absolute; left: -0.4rem; top: 0.2rem;
+  width: 1.1rem; height: 1.1rem; background: #fff;
+  border: 3px solid #4caf50; border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+  transition: all 0.3s ease;
 }
-.timeline-content { padding-left: 1.5rem; }
+.timeline-entry:hover .timeline-marker {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 5px rgba(76, 175, 80, 0.3);
+}
+.timeline-content { 
+  padding-left: 1.5rem; 
+  background: #f1f8e9;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+.timeline-entry:hover .timeline-content {
+  border-left-color: #4caf50;
+  box-shadow: 0 3px 10px rgba(76, 175, 80, 0.2);
+}
 .timeline-date {
   display: block; font-size: 0.9rem; font-weight: bold;
-  color: #4caf50; margin-bottom: 0.25rem;
+  color: #388e3c; margin-bottom: 0.25rem;
 }
-.timeline-title { margin: 0; font-size: 1.1rem; }
+.timeline-title { 
+  margin: 0; 
+  font-size: 1.1rem; 
+  color: #2d5a2d;
+}
 .timeline-content p { margin: 0.5rem 0 0; line-height: 1.4; }
+
+/* CV & Contact styling */
+#contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contact ul li {
+  background: #e8f5e9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+  transition: all 0.3s ease;
+}
+
+#contact ul li:hover {
+  background: #c8e6c9;
+  transform: translateX(5px);
+}
+
+#contact ul li::before {
+  content: none; /* Remove the arrow for contact items */
+}
+
+/* Strong text styling */
+strong {
+  color: #2d5a2d;
+  font-weight: 700;
+}
+
+/* Section spacing */
+.main-content > div > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+/*─────────────────────────────────────────────────────────────────────────*/
+/* Mobile Responsiveness                                                   */
+/*─────────────────────────────────────────────────────────────────────────*/
+/* Hamburger menu button */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  background: #4caf50;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    position: fixed;
+    left: -250px; /* Hide sidebar off-screen */
+    width: 250px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .sidebar.active {
+    left: 0; /* Slide in sidebar */
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+    padding-top: 4rem; /* Space for hamburger button */
+  }
+  
+  .page-wrapper {
+    max-width: 100%;
+  }
+  
+  /* Adjust timeline for mobile */
+  .timeline-container {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-container::before {
+    left: 0.5rem;
+  }
+  
+  .timeline-marker {
+    left: -0.4rem;
+  }
+  
+  .timeline-content {
+    padding: 0.8rem;
+    padding-left: 1.5rem;
+  }
+  
+  /* Mobile typography adjustments */
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-title {
+    font-size: 1rem;
+  }
+  
+  /* Contact section mobile */
+  #contact ul li {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Overlay for mobile menu */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 180px;
+  }
+  
+  .main-content {
+    margin-left: 180px;
+  }
+}
 </style>
 
 <div class="page-wrapper">
-<aside class="sidebar">
+<button class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="sidebar" id="sidebar">
 <ul class="sidebar-nav">
 <li><a href="#" data-tab="about">About Me</a></li>
 <li><a href="#" data-tab="contact">CV &amp; Contact</a></li>
@@ -146,22 +395,22 @@ I'm based in Singapore. I recently graduated with an MSc in Financial Statistics
 
 - **MSc Statistics (Financial Statistics)**  
   London School of Economics and Political Science
-- **B.A. Economics (First Class Honours)**  
+- **BA. Economics**  
   Nanyang Technological University
 
 ## Skills
 
-- **Languages**: English (Native), Mandarin (Fluent)  
+- **Languages**: English (Native), Mandarin (Native)  
 - **Programming**: Python (Pandas, NumPy, SciPy, Statsmodels, CVXPY, IPyWidgets, xlwings), R  
-- **Quant & ML**: Time-series forecasting, bagging/boosting, deep learning, PCA, econometric modelling  
-- **Financial**: Equity derivatives (options, futures, variance swaps), volatility surfaces & Greeks  
+- **Quant & ML**: Time-series forecasting, Deep learning, PCA, CART, KNN, Econometric modelling  
+- **Financial**: Equity Derivatives (options, futures, variance swaps), Volatility Surface & Greeks   
 </div>
 
 <div id="contact" class="tab-content">
 <h2>CV &amp; Contact</h2>
 <ul>
-  <li>📄 <a href="/assets/Lim_En_Quan_CV.pdf" target="_blank">Download my résumé (PDF)</a></li>
-  <li>✉️ <a href="mailto:limenquan@outlook.com">limenquan@outlook.com</a></li>
+  <li><a href="/assets/Lim_En_Quan_CV.pdf" target="_blank">Download my resume (PDF)</a></li>
+  <li><a href="mailto:limenquan@outlook.com">limenquan@outlook.com</a></li>
 </ul>
 </div>
 
@@ -172,16 +421,52 @@ I'm based in Singapore. I recently graduated with an MSc in Financial Statistics
 document.addEventListener('DOMContentLoaded', function(){
   var links = document.querySelectorAll('.sidebar-nav a');
   var tabs = document.querySelectorAll('.tab-content');
+  var menuToggle = document.getElementById('menuToggle');
+  var sidebar = document.getElementById('sidebar');
+  var sidebarOverlay = document.getElementById('sidebarOverlay');
+  
   function activate(tabId){
     tabs.forEach(function(t){ t.classList.toggle('active', t.id===tabId) });
     links.forEach(function(l){ l.classList.toggle('active', l.dataset.tab===tabId) });
+    
+    // Close mobile menu when a link is clicked
+    if(window.innerWidth <= 768) {
+      sidebar.classList.remove('active');
+      sidebarOverlay.classList.remove('active');
+      menuToggle.classList.remove('active');
+    }
   }
+  
   links.forEach(function(link){
     link.addEventListener('click', function(e){
       e.preventDefault();
       activate(link.dataset.tab);
     });
   });
+  
+  // Mobile menu toggle
+  menuToggle.addEventListener('click', function() {
+    sidebar.classList.toggle('active');
+    sidebarOverlay.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+  });
+  
+  // Close menu when overlay is clicked
+  sidebarOverlay.addEventListener('click', function() {
+    sidebar.classList.remove('active');
+    sidebarOverlay.classList.remove('active');
+    menuToggle.classList.remove('active');
+  });
+  
+  // Close menu on window resize if going from mobile to desktop
+  window.addEventListener('resize', function() {
+    if(window.innerWidth > 768) {
+      sidebar.classList.remove('active');
+      sidebarOverlay.classList.remove('active');
+      menuToggle.classList.remove('active');
+    }
+  });
+  
   activate('about');
   
   // Remove Posts section
