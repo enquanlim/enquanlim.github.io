@@ -360,7 +360,12 @@ strong {
 
 <div id="about" class="tab-content" markdown="1">
 ## About Me
-I'm based in Singapore. I recently graduated with an MSc in Financial Statistics from the London School of Economics and a B.A. in Economics from Nanyang Technological University.
+
+I'm a quantitative finance professional based in Singapore with a strong foundation in statistics and derivatives trading. I recently completed my MSc in Financial Statistics at the London School of Economics, following a First Class Honours degree in Economics from Nanyang Technological University. 
+
+With hands-on experience in Societe Generale, I've developed expertise in equity derivatives pricing, volatility modeling, and quantitative strategies. I'm passionate about leveraging statistical methods and programming skills to solve complex financial problems.
+
+I'm currently seeking opportunities in the eFX trading space or derivatives-related role, where I can apply my technical skills and market knowledge.
 
 ## Career Timeline
 <div class="timeline-container">
