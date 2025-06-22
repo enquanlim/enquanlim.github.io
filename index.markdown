@@ -189,6 +189,135 @@ ul li {
   content: none; /* Remove the arrow for contact items */
 }
 
+/* Projects section styling */
+.project-card {
+  background: #f1f8e9;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+  transform: translateY(-2px);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #2d5a2d;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tech-tag {
+  background: #4caf50;
+  color: white;
+  padding: 0.2rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.project-links {
+  margin-top: 1rem;
+}
+
+.project-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  color: #388e3c;
+  font-weight: 600;
+}
+
+.project-links a:hover {
+  color: #2e7d32;
+}
+
+/* PDF Viewer Modal */
+.pdf-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  overflow: auto;
+}
+
+.pdf-modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 2% auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1000px;
+  height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.pdf-header {
+  background: #2d5a2d;
+  padding: 1rem;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pdf-header h3 {
+  color: white;
+  margin: 0;
+}
+
+.close-pdf {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-pdf:hover,
+.close-pdf:focus {
+  color: #c8e6c9;
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: calc(90vh - 60px);
+  border: none;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Mobile PDF viewer adjustments */
+@media (max-width: 768px) {
+  .pdf-modal-content {
+    width: 95%;
+    margin: 1% auto;
+    height: 95vh;
+  }
+  
+  .pdf-viewer {
+    height: calc(95vh - 60px);
+  }
+}
+
 /* Strong text styling */
 strong {
   color: #2d5a2d;
@@ -313,6 +442,16 @@ strong {
     padding: 0.8rem;
     font-size: 0.9rem;
   }
+  
+  /* Project cards on mobile */
+  .project-card {
+    padding: 1rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.6rem;
+  }
 }
 
 /* Overlay for mobile menu */
@@ -353,6 +492,7 @@ strong {
 <aside class="sidebar" id="sidebar">
 <ul class="sidebar-nav">
 <li><a href="#" data-tab="about">About Me</a></li>
+<li><a href="#" data-tab="projects">Projects</a></li>
 <li><a href="#" data-tab="contact">CV &amp; Contact</a></li>
 </ul>
 </aside>
@@ -361,9 +501,11 @@ strong {
 
 <div id="about" class="tab-content" markdown="1">
 ## About Me
-I'm a quantitative finance professional based in Singapore with a strong foundation in statistics and derivatives trading. I recently completed my MSc in Financial Statistics at the London School of Economics, following a First Class Honours degree in Economics from Nanyang Technological University. With hands-on experience from Societe Generale's trading floor, I've developed expertise in equity derivatives pricing, volatility modeling, and quantitative strategies. I'm passionate about leveraging statistical methods and programming skills to solve complex financial problems.
+I'm a quantitative finance professional based in Singapore with a strong foundation in statistics and derivatives trading. I recently completed my MSc in Financial Statistics at the London School of Economics.
 
-**I'm currently seeking opportunities in quantitative trading, derivatives pricing, or quantitative research roles where I can apply my technical skills and market knowledge.**
+Upon my graduation from NTU, I joined SocGen where I spent a year with the Quant Research team and another year in the Asia Flow Index Trading team. During my 2 years, I've developed expertise in equity derivatives pricing, volatility modeling, and quantitative strategies. 
+
+Currently, I'm seeking opportunities in trading or derivatives pricing roles where I can apply my technical skills and market knowledge.
 
 ## Career Timeline
 <div class="timeline-container">
@@ -409,6 +551,74 @@ I'm a quantitative finance professional based in Singapore with a strong foundat
 - **Financial**: Equity derivatives (options, futures, variance swaps), volatility surfaces & Greeks  
 </div>
 
+<div id="projects" class="tab-content">
+<h2>Projects</h2>
+
+<!-- Project 1 -->
+<div class="project-card" onclick="openPDF('A Hidden Markov Model Framework for Identifying Risk-On and Risk-Off States in the US Equities Market', '/assets/Classification.pdf')">
+  <h3>A Hidden Markov Model Framework for Identifying Risk-On and Risk-Off States in the US Equities Market</h3>
+  <p>In this project, I tried to distinguish between “risk-on” and “risk-off” phases in equity markets—essential for dynamic asset allocation. I propose a regime‐detection framework built on Gaussian Mixture Models (GMM) and Hidden Markov Models (HMM) applied to S&P 500 daily log‐returns.</p>
+  
+  With a rolling feed‐forward retraining scheme and grid‐search hyperparameter tuning aimed at maximizing correlation with subsequent returns, the system classifies market states and validates its signals through a backtested trading strategy, illustrating how regime awareness can enhance portfolio performance.
+  <div class="project-tech">
+    <span class="tech-tag">Python</span>
+    <span class="tech-tag">NumPy</span>
+    <span class="tech-tag">Pandas</span>
+  </div>
+  <div class="project-links">
+  </div>
+</div>
+
+<!-- Project 3 -->
+<div class="project-card" onclick="openPDF('Regression-Based Prediction of Heating and Cooling Loads in Residential Buildings', '/assets/optimal_lambda.pdf')">
+  <h3>Finding the optimal λ for EWMA model for NKY and HSI</h3>
+  <p>In this project, I investigated the optimal decay parameter λ for the Exponentially Weighted Moving Average (EWMA) volatility model in the context of Japanese and Hong Kong equities by analyzing monthly returns of the Nikkei 225 (1980–2024) and Hang Seng Index (1987–2024). </p>
+  
+  Using a rolling 36-month in-sample window with one-month out-of-sample forecasts, the study applies constrained minimization to select λ values that minimize RMSE and MAE between realized and EWMA volatilities. 
+  
+  By revealing how market-specific volatility dynamics affect the smoothing parameter, the project offers a tailored approach to EWMA-based risk management that enhances forecast accuracy and adapts to distinct asset behaviors. 
+  
+  <div class="project-tech">
+    <span class="tech-tag">Python</span>
+    <span class="tech-tag">Machine Learning</span>
+    <span class="tech-tag">Volatility Modeling</span>
+  </div>
+  <div class="project-links">
+  </div>
+</div>
+
+<!-- Project 2 -->
+<div class="project-card" onclick="openPDF('Regression-Based Prediction of Heating and Cooling Loads in Residential Buildings', '/assets/Regression.pdf')">
+  <h3>Regression-Based Prediction of Heating and Cooling Loads in Residential Buildings</h3>
+  <p>In this project, I developed a machine-learning tool that translates early‐stage architectural specifications—such as wall and roof area into accurate forecasts of heating and cooling energy demands. </p>
+  
+  By training linear, polynomial, LASSO and ridge regressions (including Bayesian variants) on the UCI Energy Efficiency dataset and systematically comparing their mean‐squared‐error performance, the study identifies the optimal modeling approach for low-error thermal‐load estimation. 
+  
+  The resulting models enable architects and engineers to evaluate and refine building designs for energy efficiency long before construction begins.
+  <div class="project-tech">
+    <span class="tech-tag">Python</span>
+    <span class="tech-tag">Machine Learning</span>
+    <span class="tech-tag">Statistics</span>
+  </div>
+  <div class="project-links">
+  </div>
+</div>
+
+
+
+<!-- PDF Viewer Modal -->
+<div id="pdfModal" class="pdf-modal">
+  <div class="pdf-modal-content">
+    <div class="pdf-header">
+      <h3 id="pdfTitle">Project Title</h3>
+      <button class="close-pdf" onclick="closePDF()">&times;</button>
+    </div>
+    <iframe id="pdfViewer" class="pdf-viewer" src=""></iframe>
+  </div>
+</div>
+
+</div>
+
 <div id="contact" class="tab-content">
 <h2>CV &amp; Contact</h2>
 <ul>
@@ -421,6 +631,35 @@ I'm a quantitative finance professional based in Singapore with a strong foundat
 </div>
 
 <script>
+// PDF viewer functions
+function openPDF(title, pdfPath) {
+  document.getElementById('pdfTitle').textContent = title;
+  document.getElementById('pdfViewer').src = pdfPath;
+  document.getElementById('pdfModal').style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+}
+
+function closePDF() {
+  document.getElementById('pdfModal').style.display = 'none';
+  document.getElementById('pdfViewer').src = ''; // Clear the iframe
+  document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  var modal = document.getElementById('pdfModal');
+  if (event.target == modal) {
+    closePDF();
+  }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closePDF();
+  }
+});
+
 document.addEventListener('DOMContentLoaded', function(){
   var links = document.querySelectorAll('.sidebar-nav a');
   var tabs = document.querySelectorAll('.tab-content');
