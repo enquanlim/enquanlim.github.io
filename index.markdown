@@ -1,7 +1,17 @@
 ---
 layout: home
 title: ""
+description: "Portfolio of Lim En Quan, quantitative finance professional in Singapore. Projects, experience, and contact."
 ---
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Portfolio of Lim En Quan, quantitative finance professional in Singapore. Projects, experience, and contact.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Lim En Quan">
+<meta property="og:title" content="Lim En Quan">
+<meta property="og:description" content="Portfolio of Lim En Quan, quantitative finance professional in Singapore. Projects, experience, and contact.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://enquanlim.github.io/">
 
 <style>
 /*─────────────────────────────────────────────────────────────────────────*/
@@ -130,7 +140,22 @@ ul li {
   left: 1rem; top: 0; bottom: 0; width: 3px;
   background: linear-gradient(to bottom, #4caf50, #81c784);
 }
-.timeline-entry { position: relative; margin-bottom: 2rem; }
+.timeline-entry {
+  position: relative;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInTimeline 0.8s ease-out forwards;
+}
+.timeline-entry:nth-child(1) { animation-delay: 0.1s; }
+.timeline-entry:nth-child(2) { animation-delay: 0.3s; }
+.timeline-entry:nth-child(3) { animation-delay: 0.5s; }
+@keyframes fadeInTimeline {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .timeline-marker {
   position: absolute; left: -0.4rem; top: 0.2rem;
   width: 1.1rem; height: 1.1rem; background: #fff;
@@ -329,6 +354,31 @@ strong {
   margin-bottom: 2rem;
 }
 
+/* Custom title block styles */
+.custom-title-block {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2.5rem auto 1.5rem auto;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInTitle 1.2s ease-out forwards;
+}
+@keyframes fadeInTitle {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.custom-title-block .main-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #2d5a2d;
+  margin-bottom: 0.3rem;
+}
+@media (max-width: 600px) {
+  .custom-title-block .main-title {
+    font-size: 1.5rem;
+  }
+}
+
 /*─────────────────────────────────────────────────────────────────────────*/
 /* Mobile Responsiveness                                                   */
 /*─────────────────────────────────────────────────────────────────────────*/
@@ -480,70 +530,99 @@ strong {
     margin-left: 180px;
   }
 }
+
+.site-title, .page-title, h1 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2.5rem auto 1.5rem auto;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d5a2d;
+}
+
+@media (max-width: 600px) {
+  .site-title, .page-title, h1 {
+    font-size: 1.5rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.page-wrapper {
+  margin-top: 0;
+}
+
+/* Hide Jekyll default footer */
+.site-footer, footer, .footer, .page-footer {
+  display: none !important;
+}
 </style>
 
-<div class="page-wrapper">
-<button class="menu-toggle" id="menuToggle">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
-<aside class="sidebar" id="sidebar">
-<ul class="sidebar-nav">
-<li><a href="#" data-tab="about">About Me</a></li>
-<li><a href="#" data-tab="projects">Projects</a></li>
-<li><a href="#" data-tab="contact">CV &amp; Contact</a></li>
-</ul>
-</aside>
+<div class="custom-title-block">
+  <div class="main-title">Lim En Quan</div>
+</div>
 
-<main class="main-content">
+<div class="page-wrapper" role="main">
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-controls="sidebar" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="sidebar-overlay" id="sidebarOverlay" tabindex="-1" aria-hidden="true"></div>
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+  <ul class="sidebar-nav">
+  <li><a href="#" data-tab="about" aria-controls="about" aria-selected="true">About Me</a></li>
+  <li><a href="#" data-tab="projects" aria-controls="projects">Projects</a></li>
+  <li><a href="#" data-tab="contact" aria-controls="contact">CV &amp; Contact</a></li>
+  </ul>
+  </aside>
 
-<div id="about" class="tab-content" markdown="1">
-## About Me
-I'm a quantitative finance professional based in Singapore with a strong foundation in statistics and derivatives trading. I recently completed my MSc in Financial Statistics at the London School of Economics.
+  <main class="main-content">
 
-Upon my graduation from NTU, I joined SocGen where I spent a year with the Quant Research team and another year in the Asia Flow Index Trading team. During my 2 years, I've developed expertise in equity derivatives pricing, volatility modeling, and quantitative strategies. 
+  <div id="about" class="tab-content" markdown="1" tabindex="0" aria-labelledby="about-tab">
+  
+  Upon my graduation from NTU, I joined SocGen where I spent a year with the Quant Research team and another year in the Asia Flow Index Trading team. During my 2 years, I've developed expertise in equity derivatives pricing, volatility modeling, and quantitative strategies. 
 
-Currently, I'm seeking opportunities in trading or derivatives pricing roles where I can apply my technical skills and market knowledge.
+  Currently, I'm seeking opportunities in trading or derivatives pricing roles where I can apply my technical skills and market knowledge.
 
-## Career Timeline
-<div class="timeline-container">
+  <h2>Career Timeline</h2>
+  <div class="timeline-container">
 
-<div class="timeline-entry">
-  <div class="timeline-marker"></div>
-  <div class="timeline-content">
-    <span class="timeline-date">Sep 2024 – Jun 2025</span>
-    <h3 class="timeline-title">MSc Statistics at London School of Economics and Political Science</h3>
+  <div class="timeline-entry">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <span class="timeline-date">Sep 2024 – Jun 2025</span>
+      <h3 class="timeline-title">MSc Statistics at London School of Economics and Political Science</h3>
+    </div>
   </div>
-</div>
 
-<div class="timeline-entry">
-  <div class="timeline-marker"></div>
-  <div class="timeline-content">
-    <span class="timeline-date">Oct 2023 – Sep 2024</span>
-    <h3 class="timeline-title">Equity Derivatives Trading Graduate Trainee at Societe Generale</h3>
+  <div class="timeline-entry">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <span class="timeline-date">Oct 2023 – Sep 2024</span>
+      <h3 class="timeline-title">Equity Derivatives Trading Graduate Trainee at Societe Generale</h3>
+    </div>
   </div>
-</div>
 
-<div class="timeline-entry">
-  <div class="timeline-marker"></div>
-  <div class="timeline-content">
-    <span class="timeline-date">Oct 2022 – Oct 2023</span>
-    <h3 class="timeline-title">Quantitative Research Graduate Trainee at Societe Generale</h3>
+  <div class="timeline-entry">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <span class="timeline-date">Oct 2022 – Oct 2023</span>
+      <h3 class="timeline-title">Quantitative Research Graduate Trainee at Societe Generale</h3>
+    </div>
   </div>
-</div>
 
-</div>
+  </div>
 
-## Education & Certification
+  <h2>Education & Certification</h2>
 
-- **MSc Statistics (Financial Statistics)**  
+  - **MSc Statistics (Financial Statistics)**  
   London School of Economics and Political Science
 - **BA. Economics**  
   Nanyang Technological University
 
-## Skills
+<h2>Skills</h2>
 
 - **Languages**: English (Native), Mandarin (Fluent)  
 - **Programming**: Python (Pandas, NumPy, SciPy, Statsmodels, CVXPY, IPyWidgets, xlwings), R  
@@ -552,83 +631,83 @@ Currently, I'm seeking opportunities in trading or derivatives pricing roles whe
 </div>
 
 <div id="projects" class="tab-content">
-<h2>Projects</h2>
+  <h2>Projects</h2>
 
-<!-- Project 1 -->
-<div class="project-card" onclick="openPDF('A Hidden Markov Model Framework for Identifying Risk-On and Risk-Off States in the US Equities Market', '/assets/Classification.pdf')">
-  <h3>A Hidden Markov Model Framework for Identifying Risk-On and Risk-Off States in the US Equities Market</h3>
-  <p>In this project, I tried to distinguish between “risk-on” and “risk-off” phases in equity markets—essential for dynamic asset allocation. I propose a regime‐detection framework built on Gaussian Mixture Models (GMM) and Hidden Markov Models (HMM) applied to S&P 500 daily log‐returns.</p>
-  
-  With a rolling feed‐forward retraining scheme and grid‐search hyperparameter tuning aimed at maximizing correlation with subsequent returns, the system classifies market states and validates its signals through a backtested trading strategy, illustrating how regime awareness can enhance portfolio performance.
-  <div class="project-tech">
-    <span class="tech-tag">Python</span>
-    <span class="tech-tag">NumPy</span>
-    <span class="tech-tag">Pandas</span>
-  </div>
-  <div class="project-links">
-  </div>
-</div>
-
-<!-- Project 3 -->
-<div class="project-card" onclick="openPDF('Regression-Based Prediction of Heating and Cooling Loads in Residential Buildings', '/assets/optimal_lambda.pdf')">
-  <h3>Finding the optimal λ for EWMA model for NKY and HSI</h3>
-  <p>In this project, I investigated the optimal decay parameter λ for the Exponentially Weighted Moving Average (EWMA) volatility model in the context of Japanese and Hong Kong equities by analyzing monthly returns of the Nikkei 225 (1980–2024) and Hang Seng Index (1987–2024). </p>
-  
-  Using a rolling 36-month in-sample window with one-month out-of-sample forecasts, the study applies constrained minimization to select λ values that minimize RMSE and MAE between realized and EWMA volatilities. 
-  
-  By revealing how market-specific volatility dynamics affect the smoothing parameter, the project offers a tailored approach to EWMA-based risk management that enhances forecast accuracy and adapts to distinct asset behaviors. 
-  
-  <div class="project-tech">
-    <span class="tech-tag">Python</span>
-    <span class="tech-tag">Machine Learning</span>
-    <span class="tech-tag">Volatility Modeling</span>
-  </div>
-  <div class="project-links">
-  </div>
-</div>
-
-<!-- Project 2 -->
-<div class="project-card" onclick="openPDF('Regression-Based Prediction of Heating and Cooling Loads in Residential Buildings', '/assets/Regression.pdf')">
-  <h3>Regression-Based Prediction of Heating and Cooling Loads in Residential Buildings</h3>
-  <p>In this project, I developed a machine-learning tool that translates early‐stage architectural specifications—such as wall and roof area into accurate forecasts of heating and cooling energy demands. </p>
-  
-  By training linear, polynomial, LASSO and ridge regressions (including Bayesian variants) on the UCI Energy Efficiency dataset and systematically comparing their mean‐squared‐error performance, the study identifies the optimal modeling approach for low-error thermal‐load estimation. 
-  
-  The resulting models enable architects and engineers to evaluate and refine building designs for energy efficiency long before construction begins.
-  <div class="project-tech">
-    <span class="tech-tag">Python</span>
-    <span class="tech-tag">Machine Learning</span>
-    <span class="tech-tag">Statistics</span>
-  </div>
-  <div class="project-links">
-  </div>
-</div>
-
-
-
-<!-- PDF Viewer Modal -->
-<div id="pdfModal" class="pdf-modal">
-  <div class="pdf-modal-content">
-    <div class="pdf-header">
-      <h3 id="pdfTitle">Project Title</h3>
-      <button class="close-pdf" onclick="closePDF()">&times;</button>
+  <!-- Project 1 -->
+  <div class="project-card" onclick="openPDF('A Hidden Markov Model Framework for Identifying Risk-On and Risk-Off States in the US Equities Market', '/assets/Classification.pdf')">
+    <h3>A Hidden Markov Model Framework for Identifying Risk-On and Risk-Off States in the US Equities Market</h3>
+    <p>In this project, I tried to distinguish between “risk-on” and “risk-off” phases in equity markets—essential for dynamic asset allocation. I propose a regime‐detection framework built on Gaussian Mixture Models (GMM) and Hidden Markov Models (HMM) applied to S&P 500 daily log‐returns.</p>
+    
+    With a rolling feed‐forward retraining scheme and grid‐search hyperparameter tuning aimed at maximizing correlation with subsequent returns, the system classifies market states and validates its signals through a backtested trading strategy, illustrating how regime awareness can enhance portfolio performance.
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">NumPy</span>
+      <span class="tech-tag">Pandas</span>
     </div>
-    <iframe id="pdfViewer" class="pdf-viewer" src=""></iframe>
+    <div class="project-links">
+    </div>
   </div>
-</div>
 
-</div>
+  <!-- Project 3 -->
+  <div class="project-card" onclick="openPDF('Regression-Based Prediction of Heating and Cooling Loads in Residential Buildings', '/assets/optimal_lambda.pdf')">
+    <h3>Finding the optimal λ for EWMA model for NKY and HSI</h3>
+    <p>In this project, I investigated the optimal decay parameter λ for the Exponentially Weighted Moving Average (EWMA) volatility model in the context of Japanese and Hong Kong equities by analyzing monthly returns of the Nikkei 225 (1980–2024) and Hang Seng Index (1987–2024). </p>
+    
+    Using a rolling 36-month in-sample window with one-month out-of-sample forecasts, the study applies constrained minimization to select λ values that minimize RMSE and MAE between realized and EWMA volatilities. 
+    
+    By revealing how market-specific volatility dynamics affect the smoothing parameter, the project offers a tailored approach to EWMA-based risk management that enhances forecast accuracy and adapts to distinct asset behaviors. 
+    
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Machine Learning</span>
+      <span class="tech-tag">Volatility Modeling</span>
+    </div>
+    <div class="project-links">
+    </div>
+  </div>
 
-<div id="contact" class="tab-content">
-<h2>CV &amp; Contact</h2>
-<ul>
-  <li><a href="/assets/Lim_En_Quan_CV.pdf" target="_blank">Download my resume (PDF)</a></li>
-  <li><a href="mailto:limenquan@outlook.com">limenquan@outlook.com</a></li>
-</ul>
-</div>
+  <!-- Project 2 -->
+  <div class="project-card" onclick="openPDF('Regression-Based Prediction of Heating and Cooling Loads in Residential Buildings', '/assets/Regression.pdf')">
+    <h3>Regression-Based Prediction of Heating and Cooling Loads in Residential Buildings</h3>
+    <p>In this project, I developed a machine-learning tool that translates early‐stage architectural specifications—such as wall and roof area into accurate forecasts of heating and cooling energy demands. </p>
+    
+    By training linear, polynomial, LASSO and ridge regressions (including Bayesian variants) on the UCI Energy Efficiency dataset and systematically comparing their mean‐squared‐error performance, the study identifies the optimal modeling approach for low-error thermal‐load estimation. 
+    
+    The resulting models enable architects and engineers to evaluate and refine building designs for energy efficiency long before construction begins.
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Machine Learning</span>
+      <span class="tech-tag">Statistics</span>
+    </div>
+    <div class="project-links">
+    </div>
+  </div>
 
-</main>
-</div>
+
+
+  <!-- PDF Viewer Modal -->
+  <div id="pdfModal" class="pdf-modal">
+    <div class="pdf-modal-content">
+      <div class="pdf-header">
+        <h3 id="pdfTitle">Project Title</h3>
+        <button class="close-pdf" onclick="closePDF()">&times;</button>
+      </div>
+      <iframe id="pdfViewer" class="pdf-viewer" src=""></iframe>
+    </div>
+  </div>
+
+  </div>
+
+  <div id="contact" class="tab-content">
+  <h2>CV &amp; Contact</h2>
+  <ul>
+    <li><a href="/assets/Lim_En_Quan_CV.pdf" target="_blank">Download my resume (PDF)</a></li>
+    <li><a href="mailto:limenquan@outlook.com">limenquan@outlook.com</a></li>
+  </ul>
+  </div>
+
+  </main>
+  </div>
 
 <script>
 // PDF viewer functions
@@ -710,43 +789,5 @@ document.addEventListener('DOMContentLoaded', function(){
   });
   
   activate('about');
-  
-  // Remove Posts section
-  var allH2s = document.querySelectorAll('h2');
-  allH2s.forEach(function(h2) {
-    if(h2.textContent.trim() === 'Posts') {
-      // Remove the h2 and all siblings after it
-      var element = h2;
-      while(element) {
-        var next = element.nextElementSibling;
-        element.remove();
-        element = next;
-      }
-    }
-  });
-  
-  // Remove footer section more carefully
-  // Look for the duplicate "Lim En Quan" at the bottom
-  var allElements = document.querySelectorAll('h2, h3, p');
-  var mainContent = document.querySelector('.main-content');
-  
-  allElements.forEach(function(el) {
-    // Check if this element is outside our main content area
-    if(!el.closest('.main-content') && !el.closest('.sidebar')) {
-      // Check if it contains "Lim En Quan" text
-      if(el.textContent.includes('Lim En Quan')) {
-        // Find the container section
-        var container = el.parentElement;
-        while(container && container !== document.body) {
-          if(container.tagName === 'FOOTER' || 
-             container.tagName === 'SECTION' || 
-             container.tagName === 'DIV') {
-            container.remove();
-            break;
-          }
-          container = container.parentElement;
-        }
-      }
-    }
-  });
-});</script>
+});
+</script>
