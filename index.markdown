@@ -582,7 +582,7 @@ strong {
 
   <div id="about" class="tab-content" markdown="1" tabindex="0" aria-labelledby="about-tab">
   
-  Upon my graduation from NTU, I joined SocGen where I spent a year with the Quant Research team and another year in the Asia Flow Index Trading team. During my 2 years, I've developed expertise in equity derivatives pricing, volatility modeling, and quantitative strategies. 
+  Upon my graduation from NTU, I joined SocGen where I spent a year with the Quant Research team and another year in the Asia Flow Index Trading team. During my 2 years, I've developed a fundamental understanding of equity derivatives pricing, volatility modeling, and quantitative strategies. 
 
   Currently, I'm seeking opportunities in trading or derivatives pricing roles where I can apply my technical skills and market knowledge.
 
